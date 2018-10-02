@@ -1,6 +1,5 @@
-﻿@model IEnumerable<Memberships.Entities.Item>
+﻿@model IEnumerable<Memberships.Entities.Subscription>
 @using Memberships.Areas.Admin.Models
-
 @{
     ViewBag.Title = "Index";
 }
@@ -18,13 +17,8 @@
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
-        
         <th>
-            @Html.DisplayNameFor(model => model.WaitDays)
-        </th>
-        
-        <th>
-            @Html.DisplayNameFor(model => model.IsFree)
+            @Html.DisplayNameFor(model => model.RegistrationCode)
         </th>
         <th></th>
     </tr>
@@ -38,14 +32,10 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.WaitDays)
+            @Html.DisplayFor(modelItem => item.RegistrationCode)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsFree)
-        </td>
-                    
-        @Html.Partial("_TableButtonsPartial", new SmallButtonModel { Id = item.Id })
         
+        @Html.Partial("_TableButtonsPartial", new SmallButtonModel { Id = item.Id})
     </tr>
 }
 
