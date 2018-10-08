@@ -5,7 +5,7 @@ using System.Web.Mvc;
 using Memberships.Entities;
 using Memberships.Models;
 using Memberships.Areas.Admin.Models;
-using Memberships.Extensions;
+using Memberships.Areas.Admin.Extensions;
 
 namespace Memberships.Areas.Admin.Controllers
 {

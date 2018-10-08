@@ -1,5 +1,5 @@
 ﻿@model Memberships.Areas.Admin.Models.ProductModel
-@using Memberships.Extensions
+@using Memberships.Areas.Admin.Extensions
 
 @{
     ViewBag.Title = "Create";
@@ -7,10 +7,10 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Product</h4>
         <hr />
@@ -42,7 +42,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ProductLinkTexts, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.ProductLinkTextId, Model.ProductLinkTexts.ToSelectListItem(Model.ProductLinkTextId), new { @class = "form-control"})
+                @Html.DropDownListFor(model => model.ProductLinkTextId, Model.ProductLinkTexts.ToSelectListItem(Model.ProductLinkTextId), new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ProductLinkTextId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -50,7 +50,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ProductTypes, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.ProductTypeId, Model.ProductTypes.ToSelectListItem(Model.ProductTypeId),  new { @class = "form-control" } )
+                @Html.DropDownListFor(model => model.ProductTypeId, Model.ProductTypes.ToSelectListItem(Model.ProductTypeId), new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ProductTypeId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -63,6 +63,6 @@
     </div>
 }
 
-<div>    
+<div>
     @Html.Partial("_BackToListbuttonPartial")
 </div>

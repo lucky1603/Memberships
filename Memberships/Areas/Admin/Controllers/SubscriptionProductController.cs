@@ -4,7 +4,7 @@ using System.Net;
 using System.Web.Mvc;
 using Memberships.Entities;
 using Memberships.Models;
-using Memberships.Extensions;
+using Memberships.Areas.Admin.Extensions;
 using Memberships.Areas.Admin.Models;
 
 namespace Memberships.Areas.Admin.Controllers

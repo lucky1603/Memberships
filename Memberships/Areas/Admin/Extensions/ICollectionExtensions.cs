@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Memberships.Extensions
+namespace Memberships.Areas.Admin.Extensions
 {
     public static class ICollectionExtensions
     {

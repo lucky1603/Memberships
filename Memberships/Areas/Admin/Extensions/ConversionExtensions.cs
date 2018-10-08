@@ -9,7 +9,7 @@ using Memberships.Models;
 using Memberships.Areas.Admin.Models;
 using System.Transactions;
 
-namespace Memberships.Extensions
+namespace Memberships.Areas.Admin.Extensions
 {
     public static class ConversionExtensions
     {
