@@ -1,0 +1,56 @@
+﻿@model Memberships.Areas.Admin.Models.SmallButtonModel
+@using Memberships.Areas.Admin.Models
+
+<td style="width:200px">
+    <div class="btn-group" role="group" aria-label="@Guid.NewGuid()">
+        @Html.Partial("_SmallButtonPartial", new SmallButtonModel { Action = "Edit", ButtonType="btn-primary",
+           Glyph ="pencil", Text = "", Id = Model.Id, ItemId = Model.ItemId, ProductId = Model.ProductId,
+           SubscriptionId = Model.SubscriptionId, UserId=Model.UserId})
+
+        @if (Model.UserId == null || Model.UserId.Equals(string.Empty))
+        {
+
+            @Html.Partial("_SmallButtonPartial", new SmallButtonModel
+            {
+                Action = "Details",
+                ButtonType = "btn-success",
+                Glyph = "list",
+                Text = "",
+                Id = Model.Id,
+                ItemId = Model.ItemId,
+                ProductId = Model.ProductId,
+                SubscriptionId = Model.SubscriptionId,
+                UserId = Model.UserId
+            })
+        }
+        @if (Model.UserId != null && !Model.UserId.Equals(string.Empty))
+        {
+            @Html.Partial("_SmallButtonPartial", new SmallButtonModel
+            {
+                Action = "Subscription",
+                ButtonType = "btn-info",
+                Glyph = "list",
+                Text = "Subscriptions",
+                Id = Model.Id,
+                ItemId = Model.ItemId,
+                ProductId = Model.ProductId,
+                SubscriptionId = Model.SubscriptionId,
+                UserId = Model.UserId
+            })
+        }
+
+
+        @Html.Partial("_SmallButtonPartial", new SmallButtonModel
+        {
+            Action = "Delete",
+            ButtonType = "btn-danger",
+            Glyph = "trash",
+            Text = "",
+            Id = Model.Id,
+            ItemId = Model.ItemId,
+            ProductId = Model.ProductId,
+            SubscriptionId = Model.SubscriptionId,
+            UserId = Model.UserId
+        })
+    </div>
+</td>
