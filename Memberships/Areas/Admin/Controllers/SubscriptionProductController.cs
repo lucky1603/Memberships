@@ -9,8 +9,9 @@ using Memberships.Areas.Admin.Models;
 
 namespace Memberships.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class SubscriptionProductController : Controller
-    {
+    {        
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Admin/SubscriptionProduct
