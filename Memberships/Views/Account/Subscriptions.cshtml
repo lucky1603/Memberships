@@ -59,17 +59,19 @@
     </tr>
     @foreach(var item in Model.UserSubscriptions)
     {
+    <tr>
         <td>@Html.DisplayFor(modelItem => item.Id)</td>
         <td>@Html.DisplayFor(modelItem => item.Title)</td>
         <td>@Html.DisplayFor(modelItem => item.RegistrationCode)</td>
         <td>@Html.DisplayFor(modelItem => item.StartDate)</td>
         <td>@Html.DisplayFor(modelItem => item.EndDate)</td>
         <td>
-            <a type="button" class="btn bth-danger btn-sm" 
+            <a type="button" class="btn bth-danger btn-sm"
                href="@Url.Action("RemoveUserSubscription")?subscriptionId=@item.Id&userId=@Model.UserId">
-                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
             </a>
         </td>
+    </tr>
     }
 </table>
 

@@ -1,20 +1,36 @@
-﻿@{
+﻿@model IEnumerable<Memberships.Models.ThumbnailAreaModel>
+
+@using Memberships.Models
+
+@{
     ViewBag.Title = "Home Page";
 }
 
-<div class="row">
-    @if(User.Identity.IsAuthenticated)
+@if (User.Identity.IsAuthenticated)
+{
+    if (Model.Count() > 0)
     {
-        <div class="col-xs-12">
-            <h2>I'm logged in</h2>
+        foreach (var thumbnailarea in Model)
+        {
+            <div class="row">
+                @Html.Partial("_ThumbnailAreaPartial", thumbnailarea)
+            </div>
+        }
+    }
+    else
+    {
+        <div class="row">
+            @Html.Partial("_ThumbnailAreaPartial", new ThumbnailAreaModel { Title = "No content yet!"})
         </div>
-    } else
-    {
+    }
+} else {
+    <div class="row">
         <div class="col-lg-9 col-md-8 col-sm-7">
             <h2>I'm not logged in</h2>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-5">
 
         </div>
-    }
-</div>
+    </div>
+}
+        
